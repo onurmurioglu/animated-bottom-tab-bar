@@ -3,15 +3,16 @@ import Products from './screens/Products';
 import Favourites from './screens/Favourites';
 import Cart from './screens/Cart';
 import Profile from './screens/Profile';
+import CustomBottomTab from './components/BottomTabs/CustomBottomTab';
 
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabs() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <CustomBottomTab {...props} />}>
       <Tab.Group
         screenOptions={{
-          headerShown: false,
+          headerShown: true,
         }}>
         <Tab.Screen
           options={{tabBarLabel: 'Home'}}

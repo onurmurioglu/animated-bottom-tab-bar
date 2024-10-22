@@ -57,7 +57,6 @@ const TabItem: FC<TabProps> = ({
     activeIndex === index + 1 ? 'white' : 'rgba(128,128,128,0.8)',
   );
 
-  //Adjust Icon color for this first render
   useEffect(() => {
     animatedActiveIndex.value = activeIndex;
     if (activeIndex === index + 1) {
@@ -75,7 +74,6 @@ const TabItem: FC<TabProps> = ({
       <Animated.View style={[tabStyle]}>
         <Pressable
           testID={`tab${label}`}
-          //Increasing touchable Area
           hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}
           onPress={onTabPress}>
           <AnimatedIcon
@@ -101,7 +99,7 @@ const styles = StyleSheet.create({
     width: LABEL_WIDTH,
   },
   label: {
-    color: 'rgba(128,128,128,0.8)',
+    color: '#2196F3', //'rgba(128,128,128,0.8)',
     fontSize: 17,
   },
 });
